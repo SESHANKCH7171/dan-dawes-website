@@ -750,22 +750,37 @@
         </p>
       </div>
 
-      <!-- Action Cards Container -->
-      <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
+      <!-- Action Cards Container (3-Column Layout with Personal LinkedIn) -->
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
         
         <!-- Direct Email Card -->
         <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between">
           <div>
             <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Direct Work Email</span>
-            <span class="font-mono text-sm sm:text-base font-semibold text-charcoal block break-all">ddawes@responselabs.com</span>
+            <span class="font-mono text-sm font-semibold text-charcoal block break-all">ddawes@responselabs.com</span>
           </div>
           <div class="mt-6 flex items-center gap-2">
-            <a href="mailto:ddawes@responselabs.com" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-harbor text-white text-xs font-mono hover:bg-amberGold transition-colors">
+            <a href="mailto:ddawes@responselabs.com" class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-harbor text-white text-xs font-mono hover:bg-amberGold transition-colors">
               Send Email
             </a>
-            <button onclick="copyEmail(this)" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white border border-hairlineLight text-slate-700 text-xs font-mono hover:bg-slate-50 transition-colors">
-              Copy Address
+            <button onclick="copyEmail(this)" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-white border border-hairlineLight text-slate-700 text-xs font-mono hover:bg-slate-50 transition-colors">
+              Copy
             </button>
+          </div>
+        </div>
+
+        <!-- Personal LinkedIn Card -->
+        <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-[#0A66C2]/40 transition-all flex flex-col justify-between shadow-sm">
+          <div>
+            <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Professional Network</span>
+            <span class="font-serif text-lg text-charcoal font-semibold block">Dan Dawes</span>
+            <span class="text-xs text-slate-500 font-mono block mt-1">linkedin.com/in/dandawes</span>
+          </div>
+          <div class="mt-6">
+            <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-[#0A66C2] text-white text-xs font-mono hover:bg-[#004182] transition-colors shadow-sm">
+              <span>Connect on LinkedIn</span>
+              <span>↗</span>
+            </a>
           </div>
         </div>
 
@@ -774,13 +789,13 @@
           <div>
             <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Response Labs HQ</span>
             <span class="font-serif text-lg text-charcoal block">The Natty Boh Tower</span>
-            <span class="text-xs text-slate-500 font-mono block mt-1">3600 O'Donnell St, Suite 500 · Baltimore, MD</span>
+            <span class="text-xs text-slate-500 font-mono block mt-1">Suite 500 · Baltimore, MD</span>
           </div>
           <div class="mt-6 flex items-center gap-2">
-            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white border border-hairlineLight text-charcoal text-xs font-mono hover:border-amberGold hover:text-amberGold transition-colors">
-              Visit Website ↗
+            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-white border border-hairlineLight text-charcoal text-xs font-mono hover:border-amberGold hover:text-amberGold transition-colors">
+              Website ↗
             </a>
-            <a href="tel:4437371111" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white border border-hairlineLight text-slate-600 text-xs font-mono hover:bg-slate-50 transition-colors">
+            <a href="tel:4437371111" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-white border border-hairlineLight text-slate-600 text-xs font-mono hover:bg-slate-50 transition-colors">
               (443) 737-1111
             </a>
           </div>
@@ -789,9 +804,14 @@
       </div>
 
       <!-- Verified Social & Channels Strip -->
-      <div class="max-w-2xl mx-auto pt-8 border-t border-hairlineLight flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-500">
+      <div class="max-w-3xl mx-auto pt-8 border-t border-hairlineLight flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-500">
+        <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer" class="text-charcoal font-semibold hover:text-[#0A66C2] transition-colors flex items-center gap-1">
+          <span>Dan Dawes (LinkedIn)</span>
+          <span>↗</span>
+        </a>
+        <span>·</span>
         <a href="https://www.linkedin.com/company/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
-          LinkedIn (Response Labs) ↗
+          Response Labs (LinkedIn) ↗
         </a>
         <span>·</span>
         <a href="https://x.com/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
