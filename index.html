@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dan Dawes — Co-Founder & CEO, Response Labs | Baltimore, MD</title>
-  <meta name="description" content="Personal website of Dan Dawes: Co-Founder & CEO of Response Labs, 4x Inc. 5000 Honoree, Exited Founder (Havas), and CRM & Loyalty Marketing Leader in Baltimore, Maryland.">
+  <title>Dan Dawes — Co-Founder &amp; CEO, Response Labs | Baltimore, MD</title>
+  <meta name="description"
+    content="Dan Dawes is the Co-Founder & CEO of Response Labs, a 4x Inc. 5000 honoree, exited agency founder (Havas), and CRM & loyalty marketing leader in Baltimore, Maryland.">
+
+  <!-- OpenGraph & Executive Share Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dan Dawes — Co-Founder &amp; CEO, Response Labs">
+  <meta property="og:description"
+    content="4x Inc. 5000 CEO · Exited Founder (Havas) · Building data-driven CRM &amp; loyalty ecosystems that make every message matter.">
+  <meta property="og:image" content="ddawes.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dan Dawes — Co-Founder &amp; CEO, Response Labs">
+  <meta name="twitter:description" content="4x Inc. 5000 CEO · Exited Founder (Havas) · Baltimore, MD">
+
+  <!-- Custom Inline SVG Monogram Favicon (Harbor Navy & Amber Gold) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1726'/%3E%3Crect x='3' y='3' width='58' height='58' rx='11' fill='none' stroke='%23C88A2E' stroke-opacity='0.45' stroke-width='1.5'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23C88A2E' font-family='Georgia, serif' font-size='28' letter-spacing='1'%3EDD%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -15,14 +37,15 @@
         extend: {
           colors: {
             alabaster: '#F8F7F4',
+            alabasterDeep: '#F0EEE8',
             harbor: '#0E1726',
-            'harbor-card': '#131D2E',
+            harborCard: '#131D2E',
+            harborSoft: '#19263C',
             charcoal: '#161B22',
             slateCustom: '#525C6B',
             amberGold: '#C88A2E',
-            'amberGold-hover': '#b57924',
+            amberGoldHover: '#B57924',
             signalTeal: '#1E7F74',
-            'signalTeal-soft': 'rgba(30, 127, 116, 0.15)',
             hairlineLight: '#E5E2DC',
             hairlineDark: 'rgba(255, 255, 255, 0.10)'
           },
@@ -35,141 +58,252 @@
       }
     }
   </script>
+
   <style>
-    /* Custom refined animations & utilities */
     ::selection {
-      background-color: rgba(200, 138, 46, 0.25);
+      background-color: rgba(200, 138, 46, 0.24);
       color: #0E1726;
     }
-    .hero-glow {
-      background: radial-gradient(circle at 50% 20%, rgba(200, 138, 46, 0.08) 0%, rgba(14, 23, 38, 0) 70%);
-    }
-    .timeline-line::before {
-      content: '';
+
+    /* Subtle Editorial Print Grain for Dark Surfaces */
+    .editorial-grain::after {
+      content: "";
       position: absolute;
-      top: 14px;
-      bottom: 14px;
-      left: 11px;
-      width: 1px;
-      background: #E5E2DC;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
+
+    /* Glass Header */
     .glass-nav {
-      background: rgba(14, 23, 38, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(14, 23, 38, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
-    .card-hover-transition {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Hero Ambient Lighting */
+    .hero-glow {
+      background:
+        radial-gradient(circle at 75% 32%, rgba(200, 138, 46, 0.12) 0%, rgba(14, 23, 38, 0) 48%),
+        radial-gradient(circle at 20% 80%, rgba(30, 127, 116, 0.10) 0%, rgba(14, 23, 38, 0) 45%);
     }
-    .card-hover-transition:hover {
+
+    /* Editorial Portrait Integration (blends background into Harbor Navy) */
+    .portrait-stage {
+      position: relative;
+      background: radial-gradient(circle at 50% 25%, #1E2C42 0%, #0E1726 85%);
+    }
+
+    .portrait-img {
+      filter: contrast(1.04) saturate(0.94);
+    }
+
+    .portrait-vignette {
+      background:
+        linear-gradient(180deg, rgba(14, 23, 38, 0.08) 0%, rgba(14, 23, 38, 0) 40%, rgba(14, 23, 38, 0.55) 78%, rgba(14, 23, 38, 0.96) 100%),
+        radial-gradient(circle at 50% 35%, rgba(14, 23, 38, 0) 48%, rgba(14, 23, 38, 0.58) 100%);
+    }
+
+    /* Scroll Reveal Motion */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Ledger Row Hover */
+    .ledger-row {
+      transition: background-color 0.25s ease, border-color 0.25s ease, padding-left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ledger-row:hover {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Card Lift */
+    .card-lift {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .card-lift:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px -10px rgba(14, 23, 38, 0.08);
+      box-shadow: 0 18px 36px -16px rgba(14, 23, 38, 0.12);
+    }
+
+    /* Intent Pill Active */
+    .intent-pill[aria-pressed="true"] {
+      background-color: #0E1726;
+      color: #FFFFFF;
+      border-color: #0E1726;
     }
   </style>
 </head>
-<body class="bg-alabaster text-charcoal font-sans antialiased selection:bg-amberGold/20">
+
+<body class="bg-alabaster text-charcoal font-sans antialiased">
+
+  <!-- ================= HAIRLINE SCROLL PROGRESS BAR ================= -->
+  <div id="scrollProgress"
+    class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-amberGold via-amber-400 to-signalTeal z-[60] w-0 transition-[width] duration-75 ease-out pointer-events-none">
+  </div>
 
   <!-- ================= TOP NAVIGATION ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-hairlineDark transition-all duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-hairlineDark">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
-        <span class="w-2.5 h-2.5 rounded-full bg-amberGold transition-transform group-hover:scale-125"></span>
-        <span class="font-serif text-xl tracking-wide text-white group-hover:text-amberGold transition-colors">Dan Dawes</span>
-        <span class="text-xs font-mono text-slate-400 hidden sm:inline-block ml-2 border-l border-white/10 pl-3">CEO · Response Labs</span>
+      <a href="#" class="flex items-center gap-2.5 group whitespace-nowrap">
+        <span class="w-2 h-2 rounded-full bg-amberGold transition-transform duration-300 group-hover:scale-125"></span>
+        <span class="font-serif text-xl tracking-wide text-white group-hover:text-amberGold transition-colors whitespace-nowrap">Dan
+          Dawes</span>
+        <span
+          class="text-[11px] font-mono text-slate-400 hidden xl:inline-block ml-1.5 border-l border-white/15 pl-3 tracking-wide whitespace-nowrap">CEO
+          · Response Labs</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#story" class="hover:text-amberGold transition-colors">Story</a>
-        <a href="#impact" class="hover:text-amberGold transition-colors">Impact &amp; Focus</a>
-        <a href="#insights" class="hover:text-amberGold transition-colors">Media &amp; Talks</a>
-        <a href="#community" class="hover:text-amberGold transition-colors">Community</a>
-        <a href="#connect" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white hover:bg-amberGold hover:text-white transition-all text-xs font-mono uppercase tracking-wider">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#story" class="hover:text-amberGold transition-colors whitespace-nowrap">Journey</a>
+        <a href="#impact" class="hover:text-amberGold transition-colors whitespace-nowrap">Focus &amp; Brands</a>
+        <a href="#insights" class="hover:text-amberGold transition-colors whitespace-nowrap">Press &amp; Talks</a>
+        <a href="#community" class="hover:text-amberGold transition-colors whitespace-nowrap">Community</a>
+        <button type="button" onclick="openMediaKit()"
+          class="text-xs font-mono uppercase tracking-wider text-slate-300 hover:text-amberGold transition-colors border-l border-white/15 pl-6 whitespace-nowrap">
+          Media Kit
+        </button>
+        <a href="#connect"
+          class="px-4 py-1.5 rounded-full bg-amberGold/15 text-amberGold border border-amberGold/35 hover:bg-amberGold hover:text-harbor transition-all text-xs font-mono font-medium uppercase tracking-wider whitespace-nowrap">
           Connect
         </a>
       </nav>
 
-      <!-- Mobile Action -->
-      <a href="#connect" class="md:hidden text-xs font-mono uppercase tracking-wider text-amberGold border border-amberGold/40 px-3 py-1 rounded-full">
-        Connect
-      </a>
+      <!-- Mobile Actions -->
+      <div class="flex lg:hidden items-center gap-2.5">
+        <button type="button" onclick="openMediaKit()"
+          class="text-[11px] font-mono uppercase tracking-wider text-slate-300 border border-white/15 px-2.5 py-1 rounded-full whitespace-nowrap">
+          Media Kit
+        </button>
+        <a href="#connect"
+          class="text-[11px] font-mono uppercase tracking-wider text-amberGold border border-amberGold/40 px-2.5 py-1 rounded-full whitespace-nowrap">
+          Connect
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- ================= SECTION 1: HERO ================= -->
-  <section class="relative bg-harbor text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden hero-glow">
-    <!-- Interactive Canvas Layer -->
-    <canvas id="signalWaveCanvas" class="absolute inset-0 pointer-events-auto opacity-70" aria-label="Interactive loyalty signal wave visualization"></canvas>
+  <section id="hero"
+    class="relative bg-harbor text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden hero-glow editorial-grain">
+    <!-- Interactive Signal Wave Canvas -->
+    <canvas id="signalWaveCanvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-80"
+      aria-hidden="true"></canvas>
 
-    <!-- Subtle vignette overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-harbor/90 pointer-events-none"></div>
+    <!-- Bottom Fade Seam -->
+    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-harbor to-transparent pointer-events-none"></div>
 
     <div class="relative max-w-6xl mx-auto px-6 z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Content (8 cols) -->
-        <div class="lg:col-span-8 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-hairlineDark">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+        <!-- Left Editorial Column -->
+        <div class="md:col-span-7 xl:col-span-8 space-y-6">
+          <div
+            class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10">
             <span class="w-1.5 h-1.5 rounded-full bg-signalTeal animate-pulse"></span>
-            <span class="font-mono text-xs uppercase tracking-widest text-slate-300">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-300">
               Baltimore, Maryland · Co-Founder &amp; CEO, Response Labs
             </span>
           </div>
 
-          <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+          <h1 class="font-serif text-5xl sm:text-6xl md:text-6xl lg:text-[5.5rem] tracking-tight leading-[0.98] text-white">
             Dan Dawes
           </h1>
 
-          <p class="text-xl sm:text-2xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-            Building data-driven CRM &amp; loyalty ecosystems that make every message matter.
+          <p class="text-xl sm:text-2xl text-slate-300 font-light leading-relaxed max-w-2xl">
+            Building data-driven CRM &amp; loyalty ecosystems that <span
+              class="font-serif italic text-white text-[1.4em] tracking-wide">make every message matter.</span>
           </p>
 
-          <div class="pt-2">
-            <p class="font-mono text-xs sm:text-sm text-slate-400 flex flex-wrap items-center gap-y-2 gap-x-3">
-              <span class="inline-flex items-center text-amberGold font-medium">4× Inc. 5000 CEO</span>
-              <span class="text-slate-600">·</span>
+          <!-- Credential Bar -->
+          <div class="pt-1">
+            <p class="font-mono text-xs sm:text-[13px] text-slate-400 flex flex-wrap items-center gap-y-2 gap-x-3">
+              <span class="text-amberGold font-medium">4× Inc. 5000 CEO</span>
+              <span class="text-slate-600">/</span>
               <span>Exited Founder (Havas)</span>
-              <span class="text-slate-600">·</span>
+              <span class="text-slate-600">/</span>
               <span>Advisor, Tyus Bowser Foundation</span>
             </p>
           </div>
 
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="#connect" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-amberGold text-harbor font-semibold text-sm hover:bg-amberGold-hover transition-all shadow-lg shadow-amberGold/15 hover:shadow-amberGold/25 hover:-translate-y-0.5">
+          <!-- Action Row -->
+          <div class="pt-5 flex flex-wrap items-center gap-3.5">
+            <a href="#connect"
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-amberGold text-harbor font-semibold text-sm hover:bg-amberGoldHover transition-all shadow-lg shadow-amberGold/15 hover:shadow-amberGold/30 hover:-translate-y-0.5">
               Connect With Dan
             </a>
-            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/5 text-slate-200 border border-hairlineDark hover:border-slate-400 hover:text-white transition-all text-sm group">
+            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/[0.04] text-slate-200 border border-white/15 hover:border-white/40 hover:text-white transition-all text-sm group">
               Explore Response Labs
-              <span class="ml-1.5 text-xs text-amberGold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              <span
+                class="ml-1.5 text-xs text-amberGold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
             </a>
+            <button type="button" onclick="openMediaKit()"
+              class="inline-flex items-center justify-center px-4 py-3 text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-amberGold transition-colors">
+              Speaker &amp; Media Kit →
+            </button>
           </div>
         </div>
 
-        <!-- Right: Executive Portrait Frame (4 cols) -->
-        <div class="lg:col-span-4 flex justify-start lg:justify-end">
-          <div class="relative group">
-            <!-- Subtle Gold & Teal ambient glow -->
-            <div class="absolute -inset-1.5 bg-gradient-to-tr from-amberGold/30 via-transparent to-signalTeal/30 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
-            
-            <div class="relative w-72 sm:w-80 rounded-2xl bg-harbor-card/80 border border-white/10 p-2 overflow-hidden shadow-2xl backdrop-blur-md">
-              <!-- Portrait Image Container -->
-              <div class="relative w-full h-84 sm:h-[420px] rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-inner">
-                <!-- Dan's official headshot -->
-                <img 
-                  id="executiveHeadshot"
-                  src="dan-dawes.png" 
-                  alt="Dan Dawes - Co-Founder & CEO, Response Labs" 
-                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  onerror="this.style.display='none'; document.getElementById('headshotFallback').style.display='flex';"
-                >
-                <div id="headshotFallback" class="hidden w-full h-full flex-col items-center justify-center text-center p-6 space-y-3 bg-gradient-to-b from-slate-800 to-harbor">
-                  <div class="w-20 h-20 rounded-full border border-amberGold/50 flex items-center justify-center bg-amberGold/10">
-                    <span class="font-serif text-3xl text-amberGold">DD</span>
-                  </div>
-                  <div>
-                    <span class="block font-serif text-lg text-white">Dan Dawes</span>
-                    <span class="font-mono text-xs text-slate-400">Response Labs CEO</span>
-                  </div>
+        <!-- Right Editorial Portrait Column -->
+        <div class="md:col-span-5 xl:col-span-4 flex justify-center md:justify-end">
+          <div class="relative w-full max-w-[330px] group">
+            <!-- Subtle Rim Glow -->
+            <div
+              class="absolute -inset-2 bg-gradient-to-tr from-amberGold/25 via-transparent to-signalTeal/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-95 transition-opacity duration-500">
+            </div>
+
+            <!-- Seamless Editorial Portrait Frame -->
+            <div
+              class="relative portrait-stage rounded-2xl overflow-hidden border border-amberGold/25 shadow-2xl h-[380px] sm:h-[430px]">
+              <img id="executiveHeadshot" src="ddawes.png" alt="Dan Dawes — Co-Founder and CEO of Response Labs"
+                class="w-full h-full object-cover object-top portrait-img transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                onerror="handleHeadshotError(this)">
+              <!-- Fallback if image unavailable -->
+              <div id="headshotFallback"
+                class="hidden w-full h-full flex-col items-center justify-center text-center p-6 space-y-3 bg-gradient-to-b from-harborSoft to-harbor">
+                <div
+                  class="w-20 h-20 rounded-full border border-amberGold/50 flex items-center justify-center bg-amberGold/10">
+                  <span class="font-serif text-3xl text-amberGold">DD</span>
                 </div>
+                <div>
+                  <span class="block font-serif text-xl text-white">Dan Dawes</span>
+                  <span class="font-mono text-xs text-slate-400">Co-Founder &amp; CEO · Response Labs</span>
+                </div>
+              </div>
+
+              <!-- Editorial Dark Vignette & Bottom Fade -->
+              <div class="absolute inset-0 portrait-vignette pointer-events-none"></div>
+
+              <!-- Subtle Architectural Caption Overlay -->
+              <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between pointer-events-none">
+                <div>
+                  <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-amberGold">The Natty Boh
+                    Tower</span>
+                  <span class="block font-serif text-lg text-white leading-tight mt-0.5">Baltimore · Est. 2003</span>
+                </div>
+                <span
+                  class="font-mono text-[10px] uppercase tracking-widest text-slate-300/80 border border-white/15 px-2 py-0.5 rounded bg-harbor/60 backdrop-blur-sm">
+                  CEO
+                </span>
               </div>
             </div>
           </div>
@@ -179,374 +313,425 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 2: CREDIBILITY STRIP ================= -->
-  <section class="border-y border-hairlineLight bg-white py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-hairlineLight">
-        
+  <!-- ================= SECTION 2: CREDIBILITY STRIP & ECOSYSTEM ================= -->
+  <section class="border-b border-hairlineLight bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 lg:divide-x divide-hairlineLight">
+
         <!-- Metric 1 -->
-        <div class="pt-4 lg:pt-0 lg:px-6 first:pl-0">
-          <div class="flex items-baseline gap-1">
-            <span class="font-serif text-4xl sm:text-5xl text-charcoal">4×</span>
-            <span class="font-mono text-xs font-medium text-amberGold uppercase">Consecutive</span>
+        <div class="lg:pr-6">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-serif text-4xl sm:text-5xl text-charcoal tabular-nums count-up" data-start="1" data-target="4" data-suffix="×" data-duration="1100" data-delay="0">4×</span>
+            <span class="font-mono text-[11px] font-medium text-amberGold uppercase tracking-wider">Consecutive</span>
           </div>
-          <h3 class="font-semibold text-charcoal mt-1 text-sm sm:text-base">Inc. 5000 Honoree</h3>
-          <p class="text-slateCustom text-xs mt-0.5 font-mono">2022, 2023, 2024, 2025</p>
+          <h2 class="font-semibold text-charcoal mt-1.5 text-sm sm:text-base">Inc. 5000 Honoree</h2>
+          <p class="text-slateCustom text-xs mt-0.5 font-mono">2022 · 2023 · 2024 · 2025</p>
         </div>
 
         <!-- Metric 2 -->
-        <div class="pt-4 lg:pt-0 lg:px-6">
-          <div class="flex items-baseline gap-1">
-            <span class="font-serif text-4xl sm:text-5xl text-charcoal">20+</span>
-            <span class="font-mono text-xs font-medium text-slate-500 uppercase">Years</span>
+        <div class="lg:px-6">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-serif text-4xl sm:text-5xl text-charcoal tabular-nums count-up" data-start="1" data-target="20" data-suffix="+" data-duration="1400" data-delay="180">20+</span>
+            <span class="font-mono text-[11px] font-medium text-slate-500 uppercase tracking-wider">Years</span>
           </div>
-          <h3 class="font-semibold text-charcoal mt-1 text-sm sm:text-base">Baltimore Tech &amp; Agency</h3>
+          <h2 class="font-semibold text-charcoal mt-1.5 text-sm sm:text-base">Baltimore Agency Builder</h2>
           <p class="text-slateCustom text-xs mt-0.5 font-mono">Continuous leadership since 2003</p>
         </div>
 
         <!-- Metric 3 -->
-        <div class="pt-4 lg:pt-0 lg:px-6">
-          <div class="flex items-baseline gap-1">
-            <span class="font-serif text-4xl sm:text-5xl text-charcoal">1</span>
-            <span class="font-mono text-xs font-medium text-signalTeal uppercase">Holding Co.</span>
+        <div class="lg:px-6">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-serif text-4xl sm:text-5xl text-charcoal tabular-nums count-up" data-start="0" data-target="1" data-duration="650" data-delay="360">1</span>
+            <span class="font-mono text-[11px] font-medium text-signalTeal uppercase tracking-wider">Global Exit</span>
           </div>
-          <h3 class="font-semibold text-charcoal mt-1 text-sm sm:text-base">Successful Agency Exit</h3>
-          <p class="text-slateCustom text-xs mt-0.5 font-mono">Congruent Media acquired by Havas</p>
+          <h2 class="font-semibold text-charcoal mt-1.5 text-sm sm:text-base">Acquired by Havas</h2>
+          <p class="text-slateCustom text-xs mt-0.5 font-mono">Congruent Media · Aug 2010</p>
         </div>
 
         <!-- Metric 4 -->
-        <div class="pt-4 lg:pt-0 lg:px-6 last:pr-0">
-          <div class="flex items-baseline gap-1">
-            <span class="font-serif text-4xl sm:text-5xl text-charcoal">#39</span>
-            <span class="font-mono text-xs font-medium text-amberGold uppercase">Regional</span>
+        <div class="lg:pl-6">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-serif text-4xl sm:text-5xl text-charcoal tabular-nums count-up" data-start="1" data-target="39" data-prefix="#" data-duration="1600" data-delay="520">#39</span>
+            <span class="font-mono text-[11px] font-medium text-amberGold uppercase tracking-wider">Baltimore</span>
           </div>
-          <h3 class="font-semibold text-charcoal mt-1 text-sm sm:text-base">Ranked in Baltimore</h3>
-          <p class="text-slateCustom text-xs mt-0.5 font-mono">#88 Maryland · #300 Marketing US</p>
+          <h2 class="font-semibold text-charcoal mt-1.5 text-sm sm:text-base">2025 Inc. 5000 Rank</h2>
+          <p class="text-slateCustom text-xs mt-0.5 font-mono">#88 Maryland · #300 US Marketing</p>
         </div>
 
       </div>
     </div>
+
+    <!-- Subtle Institutional Credentials Strip -->
+    <div class="border-t border-hairlineLight bg-alabaster/60">
+      <div
+        class="max-w-6xl mx-auto px-6 py-3.5 flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-[0.14em] text-slate-500">
+        <span>Response Labs Ecosystem Credentials</span>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-1 text-charcoal/80">
+          <span>Salesforce Partner (SFMC)</span>
+          <span class="text-amberGold">·</span>
+          <span>The Trade Desk Partner</span>
+          <span class="text-amberGold">·</span>
+          <span>GSA Contract Holder</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ================= SECTION 3: THE STORY & CAREER ARC ================= -->
-  <section id="story" class="py-24 bg-alabaster">
+  <!-- ================= SECTION 3: SIGNATURE THESIS & CAREER ARC ================= -->
+  <section id="story" class="py-24 sm:py-28 bg-alabaster">
     <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        
-        <!-- Left Column: Sticky Narrative & Core Thesis -->
-        <div class="lg:col-span-5">
+
+      <!-- Editorial Thesis Callout -->
+      <div class="reveal mb-20 pb-16 border-b border-hairlineLight grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+        <div class="lg:col-span-8">
+          <span class="font-mono text-xs uppercase tracking-[0.2em] text-amberGold font-semibold block mb-4">
+            Executive Philosophy
+          </span>
+          <blockquote
+            class="font-serif text-3xl sm:text-4xl lg:text-[2.85rem] text-charcoal leading-[1.16] tracking-tight">
+            &ldquo;The smartest brands in 2026 understand that loyalty isn&rsquo;t a program. <span
+              class="italic text-amberGold">It&rsquo;s a system.</span> It powers every engagement, every campaign, and
+            every decision about how to treat customers.&rdquo;
+          </blockquote>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <p class="text-sm text-slateCustom leading-relaxed">
+            &ldquo;Consistently delivering on business objectives and key metrics for our clients requires the right
+            people, processes, and technology.&rdquo;
+          </p>
+          <span class="block font-mono text-[11px] uppercase tracking-widest text-slate-500 mt-3">
+            — Dan Dawes, Response Labs
+          </span>
+        </div>
+      </div>
+
+      <!-- Two-Column Narrative + Editorial Ledger Timeline -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16">
+
+        <!-- Sticky Left Narrative -->
+        <div class="lg:col-span-5 reveal">
           <div class="lg:sticky lg:top-28 space-y-6">
-            <span class="font-mono text-xs uppercase tracking-widest text-amberGold font-semibold">
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-signalTeal font-semibold">
               The Journey
             </span>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight">
+            <h2 class="font-serif text-4xl sm:text-5xl text-charcoal leading-[1.08]">
               Two decades of building from Charm City.
             </h2>
             <p class="text-slateCustom leading-relaxed text-base">
-              Dan Dawes is a Baltimore-born entrepreneur and digital marketing veteran who believes technology only works when it serves real human relationships.
+              Dan Dawes is a Baltimore-born entrepreneur and digital marketing veteran who believes technology only
+              works when it serves real human relationships.
             </p>
             <p class="text-slateCustom leading-relaxed text-sm">
-              From founding Congruent Media in 2003 and steering it to an acquisition by global holding company Havas, to co-founding Response Labs in 2014 and returning to the iconic Natty Boh Tower, his career has been anchored in operational rigor, people-first culture, and an unwavering builder's mindset.
+              From launching Congruent Media on the second floor of The Natty Boh Tower in 2003 and steering it to an
+              acquisition by Havas, to co-founding Response Labs in 2014 and returning full-circle to Brewer&rsquo;s
+              Hill, his career is defined by operational rigor, people-first leadership, and a builder&rsquo;s instinct.
             </p>
 
-            <!-- Pull Quote Block -->
-            <div class="pt-4">
-              <blockquote class="border-l-2 border-amberGold pl-4 py-1 italic font-serif text-lg text-charcoal leading-relaxed bg-white/50 rounded-r-lg">
-                &ldquo;The smartest brands in 2026 understand that loyalty isn't a program. It's a system. It powers every engagement, every campaign, and every decision about how to treat customers.&rdquo;
-              </blockquote>
-              <cite class="block font-mono text-xs text-slate-500 mt-2 uppercase tracking-wider not-italic pl-4">
-                — Dan Dawes, Response Labs Perspectives
-              </cite>
+            <!-- Compact Builder Quote -->
+            <div class="pt-4 border-t border-hairlineLight">
+              <p class="font-serif italic text-lg text-charcoal leading-snug">
+                &ldquo;Being the entrepreneur that I am, that&rsquo;s really all the fuel that I needed and I started
+                taking it to the next level.&rdquo;
+              </p>
+              <span class="block font-mono text-[11px] text-slate-500 mt-1.5 uppercase tracking-wider">
+                On scaling Dundalk Dan&rsquo;s from an office snack to 60+ retailers
+              </span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Interactive Verified Timeline -->
-        <div class="lg:col-span-7">
-          <div class="relative timeline-line space-y-10 pl-8">
-            
+        <!-- Right Editorial Chapter Ledger (Hairline-Divided, No Box Clutter) -->
+        <div class="lg:col-span-7 reveal">
+          <div class="divide-y divide-hairlineLight border-y border-hairlineLight">
+
             <!-- 2003 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-alabaster border-2 border-slate-400 group-hover:border-amberGold group-hover:scale-110 transition-all flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-amberGold"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border border-hairlineLight card-hover-transition">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-semibold text-amberGold">2003</span>
-                  <span class="text-xs font-mono text-slate-400">Brewer's Hill</span>
+            <article class="py-7 sm:py-8 group">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-semibold text-amberGold tracking-wider block">2003</span>
+                  <span class="font-mono text-[11px] text-slate-400">Brewer&rsquo;s Hill</span>
                 </div>
-                <h3 class="font-serif text-2xl text-charcoal">Founded Congruent Media</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Launched an interactive marketing and design shop on the 2nd floor of the newly renovated Natty Boh Tower in Baltimore. Built long-term digital engagements for Johns Hopkins University, Speakman Co., Metal Roofing Alliance, Hurricane Grill &amp; Wings, and Pollard Banknote.
-                </p>
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors">
+                    Founded Congruent Media
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Built an interactive marketing and design agency on the 2nd floor of the newly renovated Natty Boh
+                    Tower. Partnered with Johns Hopkins University, Metal Roofing Alliance, Speakman Co., Hurricane
+                    Grill &amp; Wings, Pollard Banknote, and McElroy Metal.
+                  </p>
+                </div>
               </div>
-            </div>
+            </article>
 
             <!-- 2010 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-alabaster border-2 border-slate-400 group-hover:border-amberGold group-hover:scale-110 transition-all flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-amberGold"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border border-hairlineLight card-hover-transition">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-semibold text-signalTeal">AUGUST 2010</span>
-                  <span class="text-xs font-mono text-slate-400">Adweek Milestone</span>
+            <article class="py-7 sm:py-8 group">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-semibold text-signalTeal tracking-wider block">AUG 2010</span>
+                  <span class="font-mono text-[11px] text-slate-400">Exit · Havas</span>
                 </div>
-                <h3 class="font-serif text-2xl text-charcoal">Acquisition by Havas / Euro RSCG 4D</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Steered Congruent Media (20-person team) through its successful acquisition by global advertising holding giant Havas, joining Euro RSCG 4D Discovery as Senior Vice President alongside co-founder Jeffrey Rudolf.
-                </p>
-                <div class="mt-3">
-                  <a href="https://www.adweek.com/brand-marketing/euro-rscg-acquires-congruent-media-103128/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-mono text-slate-600 hover:text-amberGold transition-colors">
-                    Read the Adweek Announcement ↗
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal group-hover:text-signalTeal transition-colors">
+                    Acquired by Havas / Euro RSCG 4D Discovery
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Sold Congruent Media (20-person team) to global holding company Havas, joining Euro RSCG 4D
+                    Discovery as Senior Vice President alongside co-founder Jeffrey Rudolf.
+                  </p>
+                  <a href="https://www.adweek.com/brand-marketing/euro-rscg-acquires-congruent-media-103128/"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-charcoal/70 hover:text-amberGold transition-colors">
+                    <span>Adweek Coverage</span><span>↗</span>
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- 2014 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-alabaster border-2 border-slate-400 group-hover:border-amberGold group-hover:scale-110 transition-all flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-amberGold"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border border-hairlineLight card-hover-transition">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-semibold text-amberGold">JANUARY 2014</span>
-                  <span class="text-xs font-mono text-slate-400">Baltimore ETC Incubator</span>
+            <article class="py-7 sm:py-8 group">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-semibold text-amberGold tracking-wider block">JAN 2014</span>
+                  <span class="font-mono text-[11px] text-slate-400">Baltimore ETC</span>
                 </div>
-                <h3 class="font-serif text-2xl text-charcoal">Co-Founded Response Labs</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Teamed up with Brian E. Langston (CTO) and Jeffrey Rudolf to launch Response Labs in Baltimore's Emerging Technology Center (ETC). Set a bold mandate: build enterprise-grade CRM, email, and customer loyalty infrastructure with a steadfast focus on craft, transparency, and data integrity.
-                </p>
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors">
+                    Co-Founded Response Labs
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Partnered with Brian E. Langston (CTO) and Jeffrey Rudolf at Baltimore&rsquo;s Emerging Technology
+                    Center to build a people-first agency dedicated to enterprise CRM, loyalty marketing, and data
+                    intelligence.
+                  </p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 2016 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-alabaster border-2 border-slate-400 group-hover:border-amberGold group-hover:scale-110 transition-all flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-amberGold"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border border-hairlineLight card-hover-transition">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-semibold text-charcoal">2016 – 2019</span>
-                  <span class="text-xs font-mono text-slate-400">Consumer Craft Venture</span>
+            <!-- 2016-2019 -->
+            <article class="py-7 sm:py-8 group">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-semibold text-charcoal tracking-wider block">2016 – 2019</span>
+                  <span class="font-mono text-[11px] text-slate-400">Craft CPG Venture</span>
                 </div>
-                <h3 class="font-serif text-2xl text-charcoal">Launched Dundalk Dan's Beef Jerky</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Turned a homemade office snack into a recognized Maryland craft brand across 4 flavors, 60+ regional retailers, and Amazon. Earned an official citation from the Comptroller of Maryland — living proof of an instinctive builder who understands product, supply chain, and brand affinity from scratch.
-                </p>
-                <div class="mt-3">
-                  <a href="https://technical.ly/startups/dundalk-dans-is-growing-a-beef-jerky-business-inside-etc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-mono text-slate-600 hover:text-amberGold transition-colors">
-                    Featured in Technical.ly Baltimore ↗
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors">
+                    Founded Dundalk Dan&rsquo;s Beef Jerky
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Turned a homemade office snack into a nationwide craft brand across 4 flavors, 60+ retailers, and
+                    Amazon — earning an official citation from the Comptroller of Maryland.
+                  </p>
+                  <a href="https://technical.ly/startups/dundalk-dans-is-growing-a-beef-jerky-business-inside-etc/"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-charcoal/70 hover:text-amberGold transition-colors">
+                    <span>Technical.ly Baltimore Feature</span><span>↗</span>
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- 2022 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-alabaster border-2 border-slate-400 group-hover:border-amberGold group-hover:scale-110 transition-all flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-amberGold"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border border-hairlineLight card-hover-transition">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-semibold text-amberGold">AUGUST 2022</span>
-                  <span class="text-xs font-mono text-slate-400">Full-Circle Homecoming</span>
+            <article class="py-7 sm:py-8 group">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-semibold text-amberGold tracking-wider block">AUG 2022</span>
+                  <span class="font-mono text-[11px] text-slate-400">Homecoming</span>
                 </div>
-                <h3 class="font-serif text-2xl text-charcoal">Return to The Natty Boh Tower</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Having outgrown the 600-sq-ft ETC incubator, Dan relocated Response Labs HQ into Brewer's Hill's landmark Natty Boh Tower (Suite 500) — the exact building where his agency journey started nearly two decades earlier.
-                </p>
-              </div>
-            </div>
-
-            <!-- 2022-2025 -->
-            <div class="relative group">
-              <span class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-amberGold border-2 border-harbor shadow-md flex items-center justify-center">
-                <span class="w-2 h-2 rounded-full bg-white"></span>
-              </span>
-              <div class="bg-white p-6 rounded-xl border-2 border-amberGold/30 card-hover-transition shadow-sm">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-xs font-bold text-amberGold">2022 – 2025</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-amberGold/15 text-amberGold font-medium">4× Inc. 5000</span>
-                </div>
-                <h3 class="font-serif text-2xl text-charcoal">Four Straight Years on the Inc. 5000</h3>
-                <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-                  Steered Response Labs to four consecutive honors among America's fastest-growing private companies. In the 2025 rankings: <strong>#3,474 nationally</strong>, <strong>#39 in Baltimore</strong>, <strong>#88 in Maryland</strong>, and <strong>#300 in US Marketing &amp; Advertising</strong>.
-                </p>
-                <div class="mt-3">
-                  <a href="https://www.inc.com/profile/response-labs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-mono text-amberGold hover:underline">
-                    View Inc. 5000 Official Company Profile ↗
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors">
+                    Full-Circle Return to The Natty Boh Tower
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Outgrew the 600-sq-ft ETC incubator and expanded Response Labs HQ into Suite 500 of Brewer&rsquo;s
+                    Hill&rsquo;s iconic Natty Boh Tower — the exact landmark where Congruent Media began nearly twenty
+                    years earlier.
+                  </p>
+                  <a href="https://www.responselabs.com/news/oh-boh-response-labs-opens-new-baltimore-hq"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-charcoal/70 hover:text-amberGold transition-colors">
+                    <span>HQ Homecoming Announcement</span><span>↗</span>
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
+
+            <!-- 2022-2025 Highlighted Chapter -->
+            <article
+              class="py-7 sm:py-8 bg-white/80 -mx-4 px-4 sm:-mx-6 sm:px-6 rounded-xl border-l-2 border-amberGold my-2">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6">
+                <div class="sm:col-span-3">
+                  <span class="font-mono text-xs font-bold text-amberGold tracking-wider block">2022 – 2025</span>
+                  <span
+                    class="inline-block mt-1 px-2 py-0.5 rounded bg-amberGold/15 text-amberGold font-mono text-[10px] font-semibold uppercase">4×
+                    Inc. 5000</span>
+                </div>
+                <div class="sm:col-span-9">
+                  <h3 class="font-serif text-2xl text-charcoal">
+                    Four Consecutive Years on the Inc. 5000
+                  </h3>
+                  <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                    Led Response Labs onto America&rsquo;s fastest-growing private companies list four years running. In
+                    2025: <strong class="text-charcoal font-medium">#3,474 overall</strong>, <strong
+                      class="text-charcoal font-medium">#39 in Baltimore</strong>, <strong
+                      class="text-charcoal font-medium">#88 in Maryland</strong>, and <strong
+                      class="text-charcoal font-medium">#300 in Marketing, Advertising &amp; PR</strong>.
+                  </p>
+                  <a href="https://www.inc.com/profile/response-labs" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-amberGold font-medium hover:underline">
+                    <span>Official Inc. 5000 Profile</span><span>↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
 
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
-  <!-- ================= SECTION 4: FOCUS & BRAND IMPACT ================= -->
-  <section id="impact" class="py-24 bg-white border-y border-hairlineLight">
+  <!-- ================= SECTION 4: FOCUS & ENTERPRISE BRAND LEDGER ================= -->
+  <section id="impact" class="py-24 sm:py-28 bg-white border-y border-hairlineLight">
     <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="max-w-2xl mb-16">
-        <span class="font-mono text-xs uppercase tracking-widest text-signalTeal font-semibold">
-          Executive Focus &amp; Core Practice
+
+      <!-- Section Heading -->
+      <div class="reveal max-w-2xl mb-16">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-signalTeal font-semibold">
+          Executive Focus &amp; Practice
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal mt-2">
+        <h2 class="font-serif text-4xl sm:text-5xl text-charcoal mt-2 leading-[1.08]">
           Precision CRM &amp; Loyalty Architecture
         </h2>
-        <p class="text-slateCustom mt-4 text-base">
-          Helping high-frequency consumer brands, retail banners, and enterprise organizations turn millions of raw interactions into compounding customer lifetime value.
+        <p class="text-slateCustom mt-4 text-base leading-relaxed">
+          Helping high-frequency consumer brands and enterprise banners turn millions of first-party signals into
+          durable customer affinity.
         </p>
       </div>
 
-      <!-- 3 Strategic Pillars -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Pillar 1 -->
-        <div class="p-8 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between card-hover-transition">
+      <!-- 3 Clean Editorial Pillars (Top Hairline Accent Instead of Heavy Boxes) -->
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 mb-24">
+        <div class="border-t-2 border-amberGold pt-6 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-white border border-hairlineLight flex items-center justify-center text-amberGold mb-6 shadow-sm">
-              <span class="font-mono text-sm font-bold">01</span>
-            </div>
-            <h3 class="font-serif text-2xl text-charcoal mb-3">CRM &amp; Lifecycle Strategy</h3>
+            <span class="font-mono text-xs text-amberGold font-semibold">01 / LIFECYCLE</span>
+            <h3 class="font-serif text-2xl sm:text-[1.7rem] text-charcoal mt-3 mb-3">CRM &amp; Lifecycle Strategy</h3>
             <p class="text-slateCustom text-sm leading-relaxed">
-              Transforming Salesforce Marketing Cloud (SFMC) and first-party customer data into high-velocity, automated customer journeys that eliminate churn and elevate customer frequency.
+              Transforming Salesforce Marketing Cloud (SFMC) and first-party customer data into automated,
+              high-retention customer journeys that make every message matter.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-hairlineLight font-mono text-xs text-slate-500">
-            Salesforce Partner · First-Party Identity
-          </div>
+          <span
+            class="mt-6 pt-4 border-t border-hairlineLight font-mono text-[11px] uppercase tracking-wider text-slate-400">
+            Salesforce Partner · First-Party Data
+          </span>
         </div>
 
-        <!-- Pillar 2 -->
-        <div class="p-8 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between card-hover-transition">
+        <div class="border-t-2 border-signalTeal pt-6 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-white border border-hairlineLight flex items-center justify-center text-signalTeal mb-6 shadow-sm">
-              <span class="font-mono text-sm font-bold">02</span>
-            </div>
-            <h3 class="font-serif text-2xl text-charcoal mb-3">Behavioral Loyalty Systems</h3>
+            <span class="font-mono text-xs text-signalTeal font-semibold">02 / AFFINITY</span>
+            <h3 class="font-serif text-2xl sm:text-[1.7rem] text-charcoal mt-3 mb-3">Behavioral Loyalty Systems</h3>
             <p class="text-slateCustom text-sm leading-relaxed">
-              Moving enterprise brands beyond transactional punch-cards to holistic affinity architectures that reward genuine customer behaviors and deepen brand trust.
+              Moving enterprise organizations beyond transactional points and punch-cards to holistic loyalty engines
+              that guide every customer touchpoint and media decision.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-hairlineLight font-mono text-xs text-slate-500">
-            Retention Modeling · Omnichannel Media
-          </div>
+          <span
+            class="mt-6 pt-4 border-t border-hairlineLight font-mono text-[11px] uppercase tracking-wider text-slate-400">
+            Retention Modeling · The Trade Desk
+          </span>
         </div>
 
-        <!-- Pillar 3 -->
-        <div class="p-8 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between card-hover-transition">
+        <div class="border-t-2 border-charcoal pt-6 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-white border border-hairlineLight flex items-center justify-center text-charcoal mb-6 shadow-sm">
-              <span class="font-mono text-sm font-bold">03</span>
-            </div>
-            <h3 class="font-serif text-2xl text-charcoal mb-3">People-First Leadership</h3>
+            <span class="font-mono text-xs text-charcoal font-semibold">03 / CULTURE</span>
+            <h3 class="font-serif text-2xl sm:text-[1.7rem] text-charcoal mt-3 mb-3">People-First Leadership</h3>
             <p class="text-slateCustom text-sm leading-relaxed">
-              Marrying disciplined operational craft with a deeply human agency culture. Scaling teams across Baltimore, Seattle, and remote environments while maintaining zero client compromise.
+              Combining agency craft with operational intelligence across Baltimore, Seattle, and remote teams
+              nationwide — because MarTech only delivers when the people behind it thrive.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-hairlineLight font-mono text-xs text-slate-500">
-            4x Inc. 5000 · High-Retention Culture
-          </div>
+          <span
+            class="mt-6 pt-4 border-t border-hairlineLight font-mono text-[11px] uppercase tracking-wider text-slate-400">
+            4× Inc. 5000 · Baltimore &amp; Seattle
+          </span>
         </div>
-
       </div>
 
-      <!-- Select Enterprise Client Portfolio (Verified List) -->
-      <div class="mt-20 pt-16 border-t border-hairlineLight">
-        <div class="max-w-2xl mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-amberGold font-semibold">
-            Enterprise Client Track Record
+      <!-- Enterprise Brand Ledger (Clean Architectural Rows) -->
+      <div class="reveal pt-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-amberGold font-semibold">
+              Selected Track Record
+            </span>
+            <h3 class="font-serif text-3xl sm:text-4xl text-charcoal mt-1">
+              Brands Guided by Dan &amp; Response Labs
+            </h3>
+          </div>
+          <span class="font-mono text-xs text-slate-400">
+            Enterprise Grocery · Hospitality · QSR · Higher Ed · Industry
           </span>
-          <h3 class="font-serif text-2xl sm:text-3xl text-charcoal mt-1">
-            Selected Brands Guided by Dan &amp; Response Labs
-          </h3>
-          <p class="text-slateCustom text-sm mt-2 leading-relaxed">
-            Architecting high-frequency lifecycle, first-party data strategy, and multi-tier loyalty ecosystems across major national consumer banners.
-          </p>
         </div>
 
-        <!-- Professional 6-Card Executive Brand Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          
-          <!-- Brand 1: Ahold Delhaize -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-signalTeal">Enterprise Grocery</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-signalTeal"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">Ahold Delhaize</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              Food Lion, Giant Food, Martin's, Hannaford &amp; Stop &amp; Shop retail banners.
-            </p>
+        <div class="border border-hairlineLight rounded-2xl overflow-hidden bg-alabaster/40">
+
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span
+              class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">Enterprise
+              Grocery</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">Ahold Delhaize</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">Food Lion, Giant Food, Giant, Martin&rsquo;s, Hannaford
+              &amp; Stop &amp; Shop banners.</p>
           </div>
 
-          <!-- Brand 2: Outback Steakhouse -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amberGold">Dining &amp; Hospitality</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-amberGold"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">Outback Steakhouse</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              Bloomin' Brands portfolio customer lifecycle &amp; omnichannel guest retention.
-            </p>
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">Dining
+              &amp; Hospitality</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">Outback Steakhouse</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">National dining guest lifecycle &amp; omnichannel loyalty
+              engagement.</p>
           </div>
 
-          <!-- Brand 3: Playa Bowls -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-charcoal">Fast Casual &amp; QSR</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-charcoal"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">Playa Bowls</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              Nationwide superfruit franchise digital loyalty programs and mobile engagement.
-            </p>
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">Fast
+              Casual &amp; QSR</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">Playa Bowls</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">High-frequency franchise loyalty systems &amp; mobile
+              customer journeys.</p>
           </div>
 
-          <!-- Brand 4: Floor Coverings International -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">In-Home Services</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">Floor Coverings Int.</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              North American franchise network lead nurturing &amp; multi-market CRM orchestration.
-            </p>
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span
+              class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">In-Home
+              Services</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">Floor Coverings International</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">Multi-market franchise CRM orchestration &amp; lead
+              nurturing.</p>
           </div>
 
-          <!-- Brand 5: HMR Weight Management -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-signalTeal">Health &amp; Wellness</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-signalTeal"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">HMR Program</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              Clinical lifestyle solutions and recurring customer journey engagement.
-            </p>
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span
+              class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">Health
+              &amp; Wellness</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">HMR Weight Management</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">Behavioral lifecycle engagement &amp; recurring retention
+              strategy.</p>
           </div>
 
-          <!-- Brand 6: Johns Hopkins University -->
-          <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-amberGold hover:bg-white hover:shadow-md transition-all">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amberGold">Higher Education</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-amberGold"></span>
-            </div>
-            <h4 class="font-serif text-xl text-charcoal font-semibold">Johns Hopkins University</h4>
-            <p class="text-slateCustom text-xs mt-2 leading-relaxed">
-              Long-term interactive design and marketing systems (Congruent Media era).
-            </p>
+          <div
+            class="ledger-row grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-5 px-4 sm:px-6 border-b border-hairlineLight last:border-b-0 border-l-2 border-l-transparent hover:border-l-amberGold">
+            <span class="md:col-span-3 font-mono text-[11px] uppercase tracking-wider text-amberGold font-medium">Higher
+              Ed &amp; Industry</span>
+            <h4 class="md:col-span-4 font-serif text-2xl text-charcoal">Johns Hopkins · AISI · MRA</h4>
+            <p class="md:col-span-5 text-sm text-slateCustom">Johns Hopkins University (Congruent Media), American Iron
+              and Steel Institute &amp; Metal Roofing Alliance.</p>
           </div>
 
         </div>
@@ -555,247 +740,306 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 5: SELECTED PRESS & PERSPECTIVES ================= -->
-  <section id="insights" class="py-24 bg-alabaster">
+  <!-- ================= SECTION 5: ASYMMETRIC PRESS, TALKS & PODCASTS ================= -->
+  <section id="insights" class="py-24 sm:py-28 bg-alabaster">
     <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-14 gap-6">
         <div>
-          <span class="font-mono text-xs uppercase tracking-widest text-amberGold font-semibold">
-            Verified Archives &amp; Audio
+          <span class="font-mono text-xs uppercase tracking-[0.2em] text-amberGold font-semibold">
+            Verified Press, Writing &amp; Audio
           </span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal mt-2">
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal mt-2">
             Selected Press, Talks &amp; Media
           </h2>
         </div>
-        <p class="text-slateCustom text-sm max-w-md">
-          Explore Dan's verified industry commentary, podcast network, keynote panels, and national business features.
-        </p>
+        <button type="button" onclick="openMediaKit()" class="inline-flex items-center gap-2 self-start md:self-auto px-4 py-2.5 rounded-full bg-white border border-hairlineLight hover:border-amberGold text-xs font-mono text-charcoal transition-all shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-amberGold"></span>
+          <span>Open Speaker &amp; Media Kit</span>
+          <span class="text-amberGold">↗</span>
+        </button>
       </div>
 
-      <!-- Bento Grid (6 Verified Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Card 1: Executive Writing -->
-        <a href="https://www.responselabs.com/insights/beyond-the-card-loyalty-most-valuable-asset" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-amberGold font-semibold uppercase">Perspective</span>
-              <span>Response Labs</span>
+      <!-- Asymmetric Editorial Bento Grid (Uniform Theme Colors + Compact Mobile) -->
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 lg:gap-6">
+
+        <!-- FEATURED SPOTLIGHT (Compact on mobile, full-height spotlight on desktop) -->
+        <a href="https://www.responselabs.com/insights/beyond-the-card-loyalty-most-valuable-asset" target="_blank" rel="noopener noreferrer" class="md:col-span-2 lg:col-span-7 group relative bg-harbor text-white p-6 sm:p-7 lg:p-10 rounded-2xl border border-hairlineDark hover:border-amberGold/50 overflow-hidden card-lift flex flex-col justify-between editorial-grain">
+          <div class="relative z-10">
+            <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono mb-4 lg:mb-8">
+              <span class="whitespace-nowrap px-2.5 py-1 rounded-full bg-amberGold/15 text-amberGold border border-amberGold/30 uppercase tracking-wider">Featured Perspective</span>
+              <span class="text-slate-400">Response Labs Insights</span>
             </div>
-            <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
+
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-white group-hover:text-amberGold transition-colors leading-[1.15]">
               Beyond the Card: Why Loyalty is Your Most Valuable Asset
             </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              Dan's executive breakdown on why modern customer loyalty must operate as an interconnected data engine rather than a static points program.
+
+            <p class="text-slate-300 text-sm lg:text-base mt-3 lg:mt-5 leading-relaxed max-w-xl">
+              Dan&rsquo;s executive thesis on shifting from static points programs to connected loyalty systems that inform every campaign, channel, and customer relationship.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>Read Insight</span>
-            <span class="text-amberGold">↗</span>
+
+          <div class="relative z-10 mt-6 lg:mt-10 pt-4 lg:pt-5 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-300 group-hover:text-white transition-colors">Read Full Executive Perspective</span>
+            <span class="text-amberGold text-sm transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
           </div>
         </a>
 
-        <!-- Card 2: Adweek Acquisition Press -->
-        <a href="https://www.adweek.com/brand-marketing/euro-rscg-acquires-congruent-media-103128/" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-signalTeal font-semibold uppercase">M&amp;A Press</span>
-              <span>Adweek</span>
-            </div>
-            <h3 class="font-serif text-xl text-charcoal group-hover:text-signalTeal transition-colors leading-snug">
-              Euro RSCG Acquires Congruent Media
-            </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              Official coverage of Dan Dawes's agency exit to Havas holding group, scaling digital capabilities for Euro RSCG Discovery.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>View Coverage</span>
-            <span class="text-signalTeal">↗</span>
-          </div>
-        </a>
+        <!-- RIGHT STACK: 2 High-Authority Press Features -->
+        <div class="md:col-span-2 md:grid md:grid-cols-2 lg:flex lg:flex-col lg:col-span-5 gap-5 lg:gap-6">
 
-        <!-- Card 3: Inc. 5000 Honor -->
-        <a href="https://www.responselabs.com/news/inc-5000-fourth-straight-year" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-amberGold font-semibold uppercase">Recognition</span>
-              <span>Inc. 5000</span>
+          <!-- Inc. 5000 -->
+          <a href="https://www.responselabs.com/news/inc-5000-fourth-straight-year" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 sm:p-7 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono mb-3">
+                <span class="text-amberGold font-semibold uppercase tracking-wider">Recognition</span>
+                <span class="text-slate-400">Inc. 5000</span>
+              </div>
+              <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
+                Response Labs Named to Inc. 5000 for Fourth Straight Year
+              </h3>
+              <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                Four consecutive years of sustained growth from The Natty Boh Tower (2022–2025).
+              </p>
             </div>
-            <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
-              Response Labs Named to Inc. 5000 for Fourth Straight Year
-            </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              Ranking among America's fastest-growing private companies (2022–2025) while staying rooted in Baltimore's historic Natty Boh Tower.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>Read Announcement</span>
-            <span class="text-amberGold">↗</span>
-          </div>
-        </a>
+            <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+              <span>Read Announcement</span>
+              <span class="text-amberGold">↗</span>
+            </div>
+          </a>
 
-        <!-- Card 4: Podcast Network -->
-        <a href="https://replaio.com/podcasts/from-the-lab-KcBQSD" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-charcoal font-semibold uppercase">Podcast Network</span>
-              <span>From the Lab</span>
+          <!-- Adweek M&A -->
+          <a href="https://www.adweek.com/brand-marketing/euro-rscg-acquires-congruent-media-103128/" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 sm:p-7 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono mb-3">
+                <span class="text-amberGold font-semibold uppercase tracking-wider">M&amp;A Press</span>
+                <span class="text-slate-400">Adweek</span>
+              </div>
+              <h3 class="font-serif text-2xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
+                Euro RSCG Acquires Congruent Media
+              </h3>
+              <p class="text-slateCustom text-sm mt-2 leading-relaxed">
+                National coverage of Dan&rsquo;s 2010 agency acquisition by global holding group Havas.
+              </p>
             </div>
+            <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+              <span>View Adweek Archive</span>
+              <span class="text-amberGold">↗</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- BOTTOM ROW: 4 Uniform Editorial Index Cards -->
+        <a href="https://replaio.com/podcasts/from-the-lab-KcBQSD" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group bg-white p-6 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-amberGold font-semibold block mb-3">Podcast Network</span>
             <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
               From the Lab: Questioning Loyalty &amp; Pizza &amp; Pods
             </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              Response Labs' podcast channel exploring data-driven relationship marketing, customer mechanics, and candid agency culture conversations.
+            <p class="text-slateCustom text-xs mt-2.5 leading-relaxed">
+              Response Labs&rsquo; flagship audio network on CRM, loyalty mechanics, and candid agency culture.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>Listen to Episodes</span>
-            <span class="text-amberGold">↗</span>
+          <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+            <span>Listen</span><span class="text-amberGold">↗</span>
           </div>
         </a>
 
-        <!-- Card 5: AMA Baltimore & BIW Speaking -->
-        <a href="https://amabaltimore.org/successful-crm-implementation-isnt-about-technology-its-about-the-people-using-it/" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
+        <a href="https://amabaltimore.org/successful-crm-implementation-isnt-about-technology-its-about-the-people-using-it/" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group bg-white p-6 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-signalTeal font-semibold uppercase">Keynote &amp; Thought Leadership</span>
-              <span>AMA Baltimore</span>
-            </div>
-            <h3 class="font-serif text-xl text-charcoal group-hover:text-signalTeal transition-colors leading-snug">
-              CRM Implementation Isn't About Technology — It's About People
-            </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              Dan's featured contributor perspective for the American Marketing Association and Baltimore Innovation Week on human-centric MarTech adoption.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>Read Publication</span>
-            <span class="text-signalTeal">↗</span>
-          </div>
-        </a>
-
-        <!-- Card 6: Technical.ly Baltimore -->
-        <a href="https://technical.ly/startups/dundalk-dans-is-growing-a-beef-jerky-business-inside-etc/" target="_blank" rel="noopener noreferrer" class="group bg-white p-6 rounded-2xl border border-hairlineLight card-hover-transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
-              <span class="text-charcoal font-semibold uppercase">Entrepreneurship</span>
-              <span>Technical.ly</span>
-            </div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-amberGold font-semibold block mb-3">AMA Baltimore</span>
             <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
-              Dundalk Dan's: Growing a Craft Brand Inside Baltimore ETC
+              CRM Isn&rsquo;t About Technology — It&rsquo;s About People
             </h3>
-            <p class="text-slateCustom text-sm mt-3 leading-relaxed">
-              How Dan scaled a consumer packaged goods brand from the incubator kitchen to 60+ retailers and an official State of Maryland citation.
+            <p class="text-slateCustom text-xs mt-2.5 leading-relaxed">
+              Featured contributor piece on why human adoption drives MarTech ROI.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
-            <span>Read Feature</span>
-            <span class="text-amberGold">↗</span>
+          <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+            <span>Read Essay</span><span class="text-amberGold">↗</span>
+          </div>
+        </a>
+
+        <a href="https://www.responselabs.com/news/biw-22-response-labs-panel-make-every-message-matter" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group bg-white p-6 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-amberGold font-semibold block mb-3">Baltimore Innovation Week</span>
+            <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
+              Make Every Message Matter: Data, Strategy &amp; Media
+            </h3>
+            <p class="text-slateCustom text-xs mt-2.5 leading-relaxed">
+              Moderator &amp; speaker panel on uniting customer data, creative, and media.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+            <span>View Recap</span><span class="text-amberGold">↗</span>
+          </div>
+        </a>
+
+        <a href="https://technical.ly/startups/dundalk-dans-is-growing-a-beef-jerky-business-inside-etc/" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group bg-white p-6 rounded-2xl border border-hairlineLight hover:border-amberGold/60 card-lift flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-amberGold font-semibold block mb-3">Technical.ly Baltimore</span>
+            <h3 class="font-serif text-xl text-charcoal group-hover:text-amberGold transition-colors leading-snug">
+              Dundalk Dan&rsquo;s: Growing a Craft Brand Inside ETC
+            </h3>
+            <p class="text-slateCustom text-xs mt-2.5 leading-relaxed">
+              Scaling a Maryland consumer venture to 60+ retailers and a Comptroller citation.
+            </p>
+          </div>
+          <div class="mt-5 pt-3 border-t border-hairlineLight flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-charcoal">
+            <span>Read Story</span><span class="text-amberGold">↗</span>
           </div>
         </a>
 
       </div>
-
     </div>
   </section>
 
   <!-- ================= SECTION 6: COMMUNITY & ADVISORY ================= -->
-  <section id="community" class="py-20 bg-harbor text-white border-t border-hairlineDark">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="p-8 sm:p-12 rounded-3xl bg-harbor-card border border-hairlineDark relative overflow-hidden">
-        
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  <section id="community"
+    class="relative py-20 sm:py-24 bg-harbor text-white border-t border-hairlineDark editorial-grain overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div
+        class="reveal p-8 sm:p-12 lg:p-14 rounded-3xl bg-harborCard/90 border border-amberGold/20 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-8 space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberGold/10 border border-amberGold/30">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberGold/10 border border-amberGold/30">
               <span class="w-1.5 h-1.5 rounded-full bg-amberGold"></span>
-              <span class="font-mono text-xs uppercase tracking-wider text-amberGold">Civic &amp; Community Advisory</span>
+              <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-amberGold">Civic &amp; Community
+                Advisory</span>
             </div>
 
-            <h2 class="font-serif text-3xl sm:text-4xl text-white">
-              Investing in Baltimore's Next Generation
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
+              Investing in Baltimore&rsquo;s Next Generation
             </h2>
 
             <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Beyond client work, Dan serves as an Advisor to the <strong class="text-white font-medium">Tyus Bowser Foundation</strong>, partnering with regional leaders from KPMG, CBRE, Northwestern Mutual, and the Baltimore Business Journal to mentor, support, and inspire under-resourced youth across Baltimore.
+              Beyond client work, Dan serves as an Advisor to the <strong class="text-white font-medium">Tyus Bowser
+                Foundation</strong> — collaborating with leaders from KPMG, CBRE, Northwestern Mutual, and the Baltimore
+              Business Journal to mentor, support, and inspire under-resourced youth across Baltimore.
             </p>
           </div>
 
           <div class="lg:col-span-4 flex justify-start lg:justify-end">
-            <a href="https://tyusbowser.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-harbor font-semibold text-sm hover:bg-amberGold hover:text-white transition-all shadow-xl group">
+            <a href="https://tyusbowser.org/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-harbor font-semibold text-sm hover:bg-amberGold hover:text-harbor transition-all shadow-xl group">
               <span>Tyus Bowser Foundation</span>
-              <span class="text-xs transition-transform group-hover:translate-x-1">↗</span>
+              <span
+                class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ================= SECTION 7: DIRECT CONNECT & FOOTER ================= -->
-  <section id="connect" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="max-w-2xl mx-auto text-center space-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-widest text-amberGold font-semibold">
-          Get in Touch
+  <!-- ================= SECTION 7: INTENT-ROUTED CONNECT ================= -->
+  <section id="connect" class="py-24 sm:py-28 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="reveal max-w-2xl mx-auto text-center space-y-4 mb-10">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-amberGold font-semibold">
+          Direct Access
         </span>
         <h2 class="font-serif text-4xl sm:text-5xl text-charcoal">
-          Let's Connect
+          Let&rsquo;s Connect
         </h2>
         <p class="text-slateCustom text-base leading-relaxed">
-          Open for keynote speaking invitations, advisory &amp; board conversations, podcast appearances, or strategic CRM &amp; loyalty partnerships.
+          Select a topic below to pre-route your inquiry, or connect directly via LinkedIn or Response Labs HQ.
         </p>
       </div>
 
-      <!-- Action Cards Container (3-Column Layout with Personal LinkedIn) -->
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-        
-        <!-- Direct Email Card -->
-        <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between">
+      <!-- Intent Routing Pills -->
+      <div class="reveal flex flex-wrap items-center justify-center gap-2.5 mb-10" role="group"
+        aria-label="Select conversation intent">
+        <button type="button"
+          class="intent-pill px-4 py-2 rounded-full text-xs font-mono border border-hairlineLight text-charcoal hover:border-charcoal transition-all"
+          aria-pressed="true"
+          onclick="setContactIntent(this, 'Speaking / Podcast Inquiry — Dan Dawes', 'For keynotes, AMA chapters, executive panels, or podcast guest invitations.')">
+          Book to Speak / Podcast
+        </button>
+        <button type="button"
+          class="intent-pill px-4 py-2 rounded-full text-xs font-mono border border-hairlineLight text-charcoal hover:border-charcoal transition-all"
+          aria-pressed="false"
+          onclick="setContactIntent(this, 'CRM & Loyalty Partnership — Response Labs', 'For enterprise CMOs and brands exploring Salesforce Marketing Cloud, CRM, or loyalty ecosystems.')">
+          Work with Response Labs
+        </button>
+        <button type="button"
+          class="intent-pill px-4 py-2 rounded-full text-xs font-mono border border-hairlineLight text-charcoal hover:border-charcoal transition-all"
+          aria-pressed="false"
+          onclick="setContactIntent(this, 'Advisory & Baltimore Community — Dan Dawes', 'For board conversations, founder mentorship, or Baltimore civic initiatives.')">
+          Advisory &amp; Baltimore Community
+        </button>
+      </div>
+
+      <!-- 3 Clean Contact Doors -->
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+
+        <!-- Door 1: Smart Direct Email -->
+        <div class="p-7 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between">
           <div>
-            <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Direct Work Email</span>
+            <span
+              class="font-mono text-[11px] uppercase tracking-wider text-amberGold font-semibold block mb-1.5">Direct
+              Executive Email</span>
             <span class="font-mono text-sm font-semibold text-charcoal block break-all">ddawes@responselabs.com</span>
+            <p id="intentHelper" class="text-xs text-slateCustom mt-2.5 leading-relaxed">
+              For keynotes, AMA chapters, executive panels, or podcast guest invitations.
+            </p>
           </div>
           <div class="mt-6 flex items-center gap-2">
-            <a href="mailto:ddawes@responselabs.com" class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-harbor text-white text-xs font-mono hover:bg-amberGold transition-colors">
-              Send Email
+            <a id="smartMailto"
+              href="mailto:ddawes@responselabs.com?subject=Speaking%20%2F%20Podcast%20Inquiry%20%E2%80%94%20Dan%20Dawes"
+              class="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-harbor text-white text-xs font-mono hover:bg-amberGold hover:text-harbor font-medium transition-colors">
+              Compose Email
             </a>
-            <button onclick="copyEmail(this)" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-white border border-hairlineLight text-slate-700 text-xs font-mono hover:bg-slate-50 transition-colors">
+            <button type="button" onclick="copyText('ddawes@responselabs.com', this)"
+              class="inline-flex items-center justify-center px-3.5 py-2.5 rounded-lg bg-white border border-hairlineLight text-charcoal text-xs font-mono hover:border-charcoal transition-colors">
               Copy
             </button>
           </div>
         </div>
 
-        <!-- Personal LinkedIn Card -->
-        <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight hover:border-[#0A66C2]/40 transition-all flex flex-col justify-between shadow-sm">
+        <!-- Door 2: LinkedIn -->
+        <div
+          class="p-7 rounded-2xl bg-alabaster border border-hairlineLight hover:border-[#0A66C2]/40 transition-colors flex flex-col justify-between">
           <div>
-            <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Professional Network</span>
-            <span class="font-serif text-lg text-charcoal font-semibold block">Dan Dawes</span>
+            <span
+              class="font-mono text-[11px] uppercase tracking-wider text-slate-400 font-semibold block mb-1.5">Executive
+              Network</span>
+            <span class="font-serif text-2xl text-charcoal block">Dan Dawes</span>
             <span class="text-xs text-slate-500 font-mono block mt-1">linkedin.com/in/dandawes</span>
+            <p class="text-xs text-slateCustom mt-2.5 leading-relaxed">
+              Follow ongoing perspectives on loyalty systems, agency leadership, and Baltimore tech.
+            </p>
           </div>
           <div class="mt-6">
-            <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-[#0A66C2] text-white text-xs font-mono hover:bg-[#004182] transition-colors shadow-sm">
+            <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#0A66C2] text-white text-xs font-mono font-medium hover:bg-[#004182] transition-colors">
               <span>Connect on LinkedIn</span>
               <span>↗</span>
             </a>
           </div>
         </div>
 
-        <!-- Agency & Office Card -->
-        <div class="p-6 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between">
+        <!-- Door 3: Response Labs HQ -->
+        <div class="p-7 rounded-2xl bg-alabaster border border-hairlineLight flex flex-col justify-between">
           <div>
-            <span class="font-mono text-xs uppercase text-slate-400 block mb-1">Response Labs HQ</span>
-            <span class="font-serif text-lg text-charcoal block">The Natty Boh Tower</span>
-            <span class="text-xs text-slate-500 font-mono block mt-1">Suite 500 · Baltimore, MD</span>
+            <span
+              class="font-mono text-[11px] uppercase tracking-wider text-signalTeal font-semibold block mb-1.5">Response
+              Labs HQ</span>
+            <span class="font-serif text-2xl text-charcoal block">The Natty Boh Tower</span>
+            <span class="text-xs text-slate-500 font-mono block mt-1">3600 O&rsquo;Donnell St, Suite 500 · Baltimore,
+              MD</span>
           </div>
           <div class="mt-6 flex items-center gap-2">
-            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-white border border-hairlineLight text-charcoal text-xs font-mono hover:border-amberGold hover:text-amberGold transition-colors">
+            <a href="https://www.responselabs.com" target="_blank" rel="noopener noreferrer"
+              class="flex-1 inline-flex items-center justify-center px-3.5 py-2.5 rounded-lg bg-white border border-hairlineLight text-charcoal text-xs font-mono hover:border-amberGold hover:text-amberGold transition-colors">
               Website ↗
             </a>
-            <a href="tel:4437371111" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-white border border-hairlineLight text-slate-600 text-xs font-mono hover:bg-slate-50 transition-colors">
+            <a href="tel:4437371111"
+              class="inline-flex items-center justify-center px-3.5 py-2.5 rounded-lg bg-white border border-hairlineLight text-slate-600 text-xs font-mono hover:border-charcoal transition-colors">
               (443) 737-1111
             </a>
           </div>
@@ -803,26 +1047,31 @@
 
       </div>
 
-      <!-- Verified Social & Channels Strip -->
-      <div class="max-w-3xl mx-auto pt-8 border-t border-hairlineLight flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-500">
-        <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer" class="text-charcoal font-semibold hover:text-[#0A66C2] transition-colors flex items-center gap-1">
-          <span>Dan Dawes (LinkedIn)</span>
-          <span>↗</span>
+      <!-- Verified Socials Strip -->
+      <div
+        class="pt-8 border-t border-hairlineLight flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-mono text-slate-500">
+        <a href="https://www.linkedin.com/in/dandawes/" target="_blank" rel="noopener noreferrer"
+          class="text-charcoal font-semibold hover:text-[#0A66C2] transition-colors">
+          Dan Dawes (LinkedIn) ↗
         </a>
-        <span>·</span>
-        <a href="https://www.linkedin.com/company/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
-          Response Labs (LinkedIn) ↗
+        <span class="text-hairlineLight">·</span>
+        <a href="https://www.linkedin.com/company/responselabs" target="_blank" rel="noopener noreferrer"
+          class="hover:text-amberGold transition-colors">
+          Response Labs ↗
         </a>
-        <span>·</span>
-        <a href="https://x.com/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
+        <span class="text-hairlineLight">·</span>
+        <a href="https://x.com/responselabs" target="_blank" rel="noopener noreferrer"
+          class="hover:text-amberGold transition-colors">
           X / Twitter ↗
         </a>
-        <span>·</span>
-        <a href="https://instagram.com/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
+        <span class="text-hairlineLight">·</span>
+        <a href="https://instagram.com/responselabs" target="_blank" rel="noopener noreferrer"
+          class="hover:text-amberGold transition-colors">
           Instagram ↗
         </a>
-        <span>·</span>
-        <a href="https://www.facebook.com/responselabs" target="_blank" rel="noopener noreferrer" class="hover:text-amberGold transition-colors">
+        <span class="text-hairlineLight">·</span>
+        <a href="https://www.facebook.com/responselabs" target="_blank" rel="noopener noreferrer"
+          class="hover:text-amberGold transition-colors">
           Facebook ↗
         </a>
       </div>
@@ -833,187 +1082,371 @@
   <!-- ================= MINIMAL EXECUTIVE FOOTER ================= -->
   <footer class="bg-harbor text-slate-400 py-8 border-t border-hairlineDark">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs font-mono gap-4">
-      <div>
-        <span>&copy; 2026 Dan Dawes · Built for clarity.</span>
-      </div>
+      <div>&copy; 2026 Dan Dawes · Built for clarity.</div>
       <div class="flex items-center gap-4 text-slate-500">
+        <button type="button" onclick="openMediaKit()" class="hover:text-amberGold transition-colors">Speaker &amp;
+          Media Kit</button>
+        <span>·</span>
         <span>Baltimore, MD · Seattle, WA</span>
         <span>·</span>
-        <a href="#" class="hover:text-amberGold transition-colors">Back to top ↑</a>
+        <a href="#" class="hover:text-amberGold transition-colors">Top ↑</a>
       </div>
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT: THE LOYALTY SIGNAL WAVE CANVAS ================= -->
+  <!-- ================= 1-CLICK SPEAKER & MEDIA KIT MODAL ================= -->
+  <div id="mediaKitModal"
+    class="fixed inset-0 z-[70] hidden items-center justify-center p-4 sm:p-6 bg-harbor/80 backdrop-blur-md"
+    role="dialog" aria-modal="true" aria-labelledby="mediaKitTitle">
+    <div
+      class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-harborCard text-white border border-white/15 shadow-2xl p-6 sm:p-8">
+
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between gap-4 pb-5 border-b border-white/10">
+        <div>
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-amberGold">Press · Podcasts ·
+            Keynotes</span>
+          <h2 id="mediaKitTitle" class="font-serif text-3xl text-white mt-1">Speaker &amp; Media Kit</h2>
+        </div>
+        <button type="button" onclick="closeMediaKit()" aria-label="Close Media Kit"
+          class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center text-slate-300 hover:text-white transition-colors font-mono text-sm">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-6 py-6">
+
+        <!-- 50-Word Intro Bio -->
+        <div class="p-4 rounded-xl bg-harbor border border-white/10">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <span class="font-mono text-xs text-amberGold uppercase tracking-wider">Short Intro Bio (Podcasts &amp;
+              Panels)</span>
+            <button type="button" onclick="copyText(document.getElementById('shortBioText').innerText, this)"
+              class="px-2.5 py-1 rounded bg-white/10 hover:bg-amberGold hover:text-harbor text-[11px] font-mono transition-colors">
+              Copy Bio
+            </button>
+          </div>
+          <p id="shortBioText" class="text-sm text-slate-300 leading-relaxed">
+            Dan Dawes is the Co-Founder &amp; CEO of Response Labs, a four-time consecutive Inc. 5000 CRM and loyalty
+            marketing agency headquartered in Baltimore&rsquo;s Natty Boh Tower. Previously, he founded Congruent Media
+            and led it to an acquisition by Havas. He also serves as an Advisor to the Tyus Bowser Foundation.
+          </p>
+        </div>
+
+        <!-- Executive Bio -->
+        <div class="p-4 rounded-xl bg-harbor border border-white/10">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <span class="font-mono text-xs text-signalTeal uppercase tracking-wider">Executive Program Bio (Keynotes
+              &amp; Press)</span>
+            <button type="button" onclick="copyText(document.getElementById('longBioText').innerText, this)"
+              class="px-2.5 py-1 rounded bg-white/10 hover:bg-amberGold hover:text-harbor text-[11px] font-mono transition-colors">
+              Copy Bio
+            </button>
+          </div>
+          <p id="longBioText" class="text-sm text-slate-300 leading-relaxed">
+            Dan Dawes is a Baltimore-based serial entrepreneur and digital marketing executive with over 20 years of
+            leadership building high-growth agencies. In 2003, he founded Congruent Media inside Baltimore&rsquo;s
+            iconic Natty Boh Tower, growing it to serve clients like Johns Hopkins University before its 2010
+            acquisition by Havas (Euro RSCG 4D Discovery). In 2014, Dan co-founded Response Labs, guiding enterprise
+            brands including Ahold Delhaize, Outback Steakhouse, and Playa Bowls to turn first-party data into lasting
+            loyalty systems. Under his leadership, Response Labs has earned four straight Inc. 5000 honors (2022–2025).
+            Beyond agency life, Dan built the Maryland craft brand Dundalk Dan&rsquo;s and advises the Tyus Bowser
+            Foundation.
+          </p>
+        </div>
+
+        <!-- Signature Talk Topics -->
+        <div>
+          <span class="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">Signature Talk &amp;
+            Podcast Topics</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span class="font-mono text-amberGold block mb-1">01</span>
+              <span class="text-white font-medium block">Loyalty Isn&rsquo;t a Program — It&rsquo;s a System</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span class="font-mono text-signalTeal block mb-1">02</span>
+              <span class="text-white font-medium block">Why CRM Fails Without the Right People</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span class="font-mono text-amberGold block mb-1">03</span>
+              <span class="text-white font-medium block">Scaling a 4× Inc. 5000 Agency From Baltimore</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assets & Direct Booking -->
+        <div
+          class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="text-xs font-mono text-slate-400">
+            <span class="block text-white">Direct Booking &amp; Media Inquiries</span>
+            <span>ddawes@responselabs.com · (443) 737-1111</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a href="ddawes.png" download="Dan-Dawes-Headshot.jpg"
+              class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-mono transition-colors">
+              Download Headshot ↓
+            </a>
+            <a href="mailto:ddawes@responselabs.com?subject=Media%20%2F%20Speaking%20Inquiry%20%E2%80%94%20Dan%20Dawes"
+              class="px-4 py-2 rounded-lg bg-amberGold hover:bg-amberGoldHover text-harbor font-semibold text-xs font-mono transition-colors">
+              Request Dan to Speak
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS: SIGNAL WAVE, MOTION, MODAL & ROUTING ================= -->
   <script>
+    // 1. Headshot Resilient Loader (.jpg -> .png -> Monogram)
+    function handleHeadshotError(img) {
+      if (!img.dataset.triedPng) {
+        img.dataset.triedPng = 'true';
+        img.src = 'ddawes.png';
+      } else {
+        img.style.display = 'none';
+        const fallback = document.getElementById('headshotFallback');
+        if (fallback) fallback.style.display = 'flex';
+      }
+    }
+
+    // 2. Hairline Scroll Progress Bar
+    (function () {
+      const bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+      }, { passive: true });
+    })();
+
+    // 3. The Loyalty Signal Wave Canvas (DPR-safe, Lerped Mouse, Reduced-Motion Compliant)
     (function () {
       const canvas = document.getElementById('signalWaveCanvas');
-      if (!canvas) return;
+      const hero = document.getElementById('hero');
+      if (!canvas || !hero) return;
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
 
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       let width = 0;
       let height = 0;
-      let dpr = window.devicePixelRatio || 1;
-      let animationFrameId;
+      let time = 0;
 
-      // Mouse tracking state
-      let mouse = {
-        x: null,
-        y: null,
-        targetY: 0,
-        active: false
-      };
-
-      // Check prefers-reduced-motion
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const mouse = { x: 0, y: 0, targetX: 0, targetY: 0, strength: 0, targetStrength: 0 };
 
       function resize() {
-        const rect = canvas.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const rect = hero.getBoundingClientRect();
         width = rect.width;
         height = rect.height;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        if (prefersReducedMotion) drawFrame();
       }
 
       window.addEventListener('resize', resize);
-      resize();
 
-      // Mouse interaction
-      canvas.parentElement.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-        mouse.active = true;
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        mouse.targetX = e.clientX - rect.left;
+        mouse.targetY = e.clientY - rect.top;
+        mouse.targetStrength = 1;
       });
 
-      canvas.parentElement.addEventListener('mouseleave', () => {
-        mouse.active = false;
+      hero.addEventListener('mouseleave', () => {
+        mouse.targetStrength = 0;
       });
 
-      // Scatter 28 subtle data-point dots along wave tracks
-      const dotCount = 28;
-      const dots = [];
-      for (let i = 0; i < dotCount; i++) {
-        dots.push({
-          progress: i / dotCount,
-          waveIndex: i % 3,
-          radius: 1.5 + Math.random() * 1.5,
-          opacity: 0.25 + Math.random() * 0.45,
-          speed: 0.0003 + Math.random() * 0.0004
-        });
-      }
-
-      let time = 0;
-
-      // 3 Ribbon Wave Configurations (Amber Gold, Signal Teal, Soft White)
       const ribbons = [
-        {
-          color: 'rgba(200, 138, 46, 0.40)', // Amber Gold
-          freq: 0.0016,
-          amp: 48,
-          speed: 0.015,
-          offsetY: 0.52
-        },
-        {
-          color: 'rgba(30, 127, 116, 0.35)', // Signal Teal
-          freq: 0.0022,
-          amp: 36,
-          speed: 0.012,
-          offsetY: 0.46
-        },
-        {
-          color: 'rgba(255, 255, 255, 0.14)', // Soft White
-          freq: 0.0012,
-          amp: 60,
-          speed: 0.008,
-          offsetY: 0.58
-        }
+        { color: 'rgba(200, 138, 46, 0.36)', width: 1.6, freq: 0.0017, amp: 46, speed: 0.013, offsetY: 0.54 },
+        { color: 'rgba(30, 127, 116, 0.32)', width: 1.25, freq: 0.0023, amp: 34, speed: 0.010, offsetY: 0.46 },
+        { color: 'rgba(255, 255, 255, 0.12)', width: 1.0, freq: 0.0012, amp: 58, speed: 0.007, offsetY: 0.60 }
       ];
 
-      function getY(ribbon, x, t) {
-        // Base sine wave with harmonic
-        let base = Math.sin(x * ribbon.freq + t * ribbon.speed) * ribbon.amp;
-        base += Math.cos(x * (ribbon.freq * 0.6) - t * (ribbon.speed * 0.5)) * (ribbon.amp * 0.35);
+      const dots = Array.from({ length: 28 }, (_, i) => ({
+        progress: i / 28,
+        waveIndex: i % 3,
+        radius: 1.4 + (i % 3) * 0.55,
+        opacity: 0.28 + ((i * 7) % 10) * 0.045,
+        speed: 0.00025 + (i % 4) * 0.00009
+      }));
 
-        // Subtle mouse pull
-        if (mouse.active && mouse.x !== null) {
-          const dx = x - mouse.x;
-          const dist = Math.abs(dx);
-          const influenceRadius = 240;
-          if (dist < influenceRadius) {
-            const factor = Math.cos((dist / influenceRadius) * (Math.PI / 2));
-            const mouseOffset = (mouse.y - (height * ribbon.offsetY)) * 0.28;
-            base += mouseOffset * factor;
+      function getY(ribbon, x, t) {
+        let base = Math.sin(x * ribbon.freq + t * ribbon.speed) * ribbon.amp;
+        base += Math.cos(x * (ribbon.freq * 0.62) - t * (ribbon.speed * 0.48)) * (ribbon.amp * 0.34);
+
+        if (mouse.strength > 0.01) {
+          const dist = Math.abs(x - mouse.x);
+          const radius = 260;
+          if (dist < radius) {
+            const factor = Math.cos((dist / radius) * (Math.PI / 2)) * mouse.strength;
+            base += (mouse.y - height * ribbon.offsetY) * 0.24 * factor;
           }
         }
-
         return height * ribbon.offsetY + base;
       }
 
-      function render() {
+      function drawFrame() {
         ctx.clearRect(0, 0, width, height);
 
-        if (!prefersReducedMotion) {
-          time += 1;
-        }
-
-        // Draw each wave ribbon
-        ribbons.forEach((ribbon, index) => {
+        ribbons.forEach((ribbon) => {
           ctx.beginPath();
-          ctx.lineWidth = index === 0 ? 1.75 : 1.25;
+          ctx.lineWidth = ribbon.width;
           ctx.strokeStyle = ribbon.color;
-
-          const step = 6;
-          for (let x = 0; x <= width + step; x += step) {
+          for (let x = 0; x <= width + 8; x += 8) {
             const y = getY(ribbon, x, time);
-            if (x === 0) {
-              ctx.moveTo(x, y);
-            } else {
-              ctx.lineTo(x, y);
-            }
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
           }
           ctx.stroke();
         });
 
-        // Draw scattered data dots
         dots.forEach((dot) => {
-          if (!prefersReducedMotion) {
-            dot.progress = (dot.progress + dot.speed) % 1;
-          }
           const x = dot.progress * width;
-          const ribbon = ribbons[dot.waveIndex];
-          const y = getY(ribbon, x, time);
-
+          const y = getY(ribbons[dot.waveIndex], x, time);
           ctx.beginPath();
           ctx.arc(x, y, dot.radius, 0, Math.PI * 2);
-          ctx.fillStyle = dot.waveIndex === 0 
-            ? `rgba(200, 138, 46, ${dot.opacity})` 
-            : dot.waveIndex === 1 
-              ? `rgba(30, 127, 116, ${dot.opacity})` 
-              : `rgba(255, 255, 255, ${dot.opacity * 0.8})`;
+          ctx.fillStyle =
+            dot.waveIndex === 0
+              ? `rgba(200, 138, 46, ${dot.opacity})`
+              : dot.waveIndex === 1
+                ? `rgba(30, 127, 116, ${dot.opacity})`
+                : `rgba(255, 255, 255, ${dot.opacity * 0.75})`;
           ctx.fill();
         });
-
-        animationFrameId = requestAnimationFrame(render);
       }
 
-      render();
+      function animate() {
+        time += 1;
+        mouse.x += (mouse.targetX - mouse.x) * 0.08;
+        mouse.y += (mouse.targetY - mouse.y) * 0.08;
+        mouse.strength += (mouse.targetStrength - mouse.strength) * 0.06;
+
+        dots.forEach((dot) => {
+          dot.progress = (dot.progress + dot.speed) % 1;
+        });
+
+        drawFrame();
+        requestAnimationFrame(animate);
+      }
+
+      resize();
+      if (prefersReducedMotion) {
+        drawFrame();
+      } else {
+        requestAnimationFrame(animate);
+      }
     })();
 
-    // Copy Email Toast Helper
-    function copyEmail(button) {
-      navigator.clipboard.writeText('ddawes@responselabs.com').then(() => {
-        const originalText = button.innerText;
-        button.innerText = 'Copied!';
-        button.classList.add('bg-amberGold', 'text-white', 'border-amberGold');
+    // 4. Scroll Reveal & Credibility Count-Up
+    (function () {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealEls = document.querySelectorAll('.reveal');
+
+      if (prefersReducedMotion) {
+        revealEls.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach((el) => observer.observe(el));
+
+      // Count-up stats (clean visible sequence: 1->4x, 1->20+, 0->1, #1->#39)
+      const counters = document.querySelectorAll('.count-up');
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const startVal = parseInt(el.dataset.start || '0', 10);
+          const target = parseInt(el.dataset.target, 10);
+          const prefix = el.dataset.prefix || '';
+          const suffix = el.dataset.suffix || '';
+          const duration = parseInt(el.dataset.duration || '1200', 10);
+          const delay = parseInt(el.dataset.delay || '0', 10);
+
+          // Set initial frame cleanly before ticking
+          el.textContent = prefix + startVal + suffix;
+
+          setTimeout(() => {
+            const startTime = performance.now();
+            function step(now) {
+              const progress = Math.min((now - startTime) / duration, 1);
+              // Gentle ease-out so each step (1, 2, 3, 4...) is clearly readable
+              const eased = 1 - Math.pow(1 - progress, 2);
+              const current = Math.round(startVal + (target - startVal) * eased);
+              el.textContent = prefix + current + suffix;
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              } else {
+                el.textContent = prefix + target + suffix;
+              }
+            }
+            requestAnimationFrame(step);
+          }, delay);
+
+          countObserver.unobserve(el);
+        });
+      }, { threshold: 0.25 });
+
+      counters.forEach((c) => countObserver.observe(c));
+    })();
+
+    // 5. Intent-Routed Contact Helper
+    function setContactIntent(button, subject, helperText) {
+      document.querySelectorAll('.intent-pill').forEach((btn) => btn.setAttribute('aria-pressed', 'false'));
+      button.setAttribute('aria-pressed', 'true');
+      const mailLink = document.getElementById('smartMailto');
+      const helper = document.getElementById('intentHelper');
+      if (mailLink) mailLink.href = 'mailto:ddawes@responselabs.com?subject=' + encodeURIComponent(subject);
+      if (helper) helper.textContent = helperText;
+    }
+
+    // 6. Universal Copy Helper
+    function copyText(text, button) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = button.innerText;
+        button.innerText = 'Copied ✓';
+        button.classList.add('bg-amberGold', 'text-harbor', 'border-amberGold');
         setTimeout(() => {
-          button.innerText = originalText;
-          button.classList.remove('bg-amberGold', 'text-white', 'border-amberGold');
-        }, 2200);
+          button.innerText = original;
+          button.classList.remove('bg-amberGold', 'text-harbor', 'border-amberGold');
+        }, 2000);
       });
     }
+
+    // 7. Speaker & Media Kit Modal Controls
+    const modal = document.getElementById('mediaKitModal');
+    function openMediaKit() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMediaKit() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeMediaKit();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeMediaKit();
+    });
   </script>
 </body>
+
 </html>
